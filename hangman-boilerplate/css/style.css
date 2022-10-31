@@ -1,10 +1,46 @@
 figure svg > * {
-    opacity: 0;
+  opacity: 0;
 }
 
-figure svg #ground             { opacity: 1; }
-figure.scaffold svg #scaffold  { opacity: 1; }
-figure.head     svg #head      { opacity: 1; }
-figure.body     svg #body      { opacity: 1; }
-figure.arms     svg #arms      { opacity: 1; }
-figure.legs     svg #legs      { opacity: 1; }
+figure svg #ground {
+  opacity: 1;
+}
+figure.scaffold svg #scaffold {
+  opacity: 1;
+}
+figure.head svg #head {
+  opacity: 1;
+}
+figure.body svg #body {
+  opacity: 1;
+}
+figure.arms svg #arms {
+  opacity: 1;
+}
+figure.legs svg #legs {
+  opacity: 1;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-parent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: max-content;
+}
+input {
+  background-color: tomato;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  margin: 10px;
+}
+.input-field {
+  width: 10px;
+  margin: auto;
+  margin: 10px;
+}

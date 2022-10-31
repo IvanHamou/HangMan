@@ -1,23 +1,30 @@
-/**
- För att toggla SVG:en
- document.querySelector('figure').classList.add('scaffold')
- document.querySelector('figure').classList.add('head')
- document.querySelector('figure').classList.add('body')
- document.querySelector('figure').classList.add('arms')
- document.querySelector('figure').classList.add('legs')
+// document.querySelector("figure").classList.add("scaffold");
+// document.querySelector("figure").classList.add("head");
+// document.querySelector("figure").classList.add("body");
+// document.querySelector("figure").classList.add("arms");
+// document.querySelector("figure").classList.add("legs");
+const parent = document.getElementById("input-parent");
 
- */
-var input = "h";
+function makeArrayFromWord(word) {
+  let newO = word.split(" ");
+  const ee = newO.join("");
+  var ww = ee.split("");
+  return ww;
+}
+var input = "a";
 const ord = "here";
-let newO = ord.split(" ");
-// console.log(newO);
-// const ee = newO.join("");
-// var ww = ee.split("");
+const fetchArray = makeArrayFromWord(ord);
 let myIndex;
-newO.forEach((res, i) => {
+fetchArray.map((res) => {
+  const input = document.createElement("input");
+  parent.appendChild(input);
+});
+
+fetchArray.forEach((res, i) => {
   if (res.includes(input)) {
     myIndex = i;
   } else {
+    // document.querySelector("figure").classList.add("legs");
     console.log("no", input);
   }
 });
