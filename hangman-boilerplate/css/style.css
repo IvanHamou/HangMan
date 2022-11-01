@@ -20,3 +20,14 @@ figure.arms svg #arms {
 figure.legs svg #legs {
   opacity: 1;
 }
+.boxes {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid black;
+  margin:0;
+  padding: 0;
+}
+.guess {
+  margin: 20px;
+}

@@ -21,3 +21,53 @@
 //     console.log("no", input);
 //   }
 // });
+
+// 
+
+const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
+
+let pickAnumber = Math.floor(Math.random() * wordList.length);
+const randomWord = wordList[pickAnumber];
+
+const wrongGuesses = [];
+let rightLetter = [];
+
+
+console.log(randomWord);
+
+const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
+console.log(letters);
+
+document.querySelector('#inputMain').addEventListener('keydown', (event) => {
+  const userInput = event.key;
+  let correctGuess = false;
+  console.log(event.key);
+  
+  for(let i = 0; i<letters.length; i++) {
+    if (userInput === letters[i]){
+      rightLetter.push(userInput);
+      console.log(rightLetter);
+      console.log('Rätt bokstav');
+      correctGuess = true;
+
+      const ul = document.querySelector('ul')
+      ul.innerHTML = rightLetter;
+    } 
+  }
+    if (correctGuess === false){
+      console.log('Fel gissning');
+      wrongGuesses.push(userInput);
+      console.log(wrongGuesses);
+    }
+  });
+
+
+  // for (let i = 0; i < randomWord.length; i++) {
+  //   if (randomWord.match(userInput)) {
+  //   console.log("Rätt");
+  //   }else {
+  //   console.log("fel");
+  //   }
+  // };
+  // console.log(event);
+
