@@ -28,6 +28,8 @@
 const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
 const ul = document.querySelector('ul');
 const ShowParts = document.querySelector("figure")
+var resetbtn = document.querySelector("#reset")
+
 
 
 
@@ -48,7 +50,9 @@ console.log(lines);
 letters.join();
 // console.log(mapLetters);
 
-document.querySelector('#inputMain').addEventListener('keydown', (event) => {
+
+
+const inputshit = document.querySelector('#inputMain').addEventListener('keydown', (event) => {
   const userInput = event.key;
   let correctGuess = false;
   console.log(event.key);
@@ -73,14 +77,21 @@ document.querySelector('#inputMain').addEventListener('keydown', (event) => {
       document.querySelector('p').textContent = `${wrongGuesses}`;
       console.log(wrongGuesses);
       ShowParts.classList.add("scaffold")
-      ShowParts.classList.add("legs")
-      ShowParts.classList.add("arms")
-      ShowParts.classList.add("body")
-      ShowParts.classList.add("head")
+      //ShowParts.classList.add("legs")
+      //ShowParts.classList.add("arms")
+      //ShowParts.classList.add("body")
+      //ShowParts.classList.add("head")
     }
-
-    
+    console.log(shitInput.value);
   });
+
+
+//  resetbtn.addEventListener("click",function(){
+//    reset();
+//});
+//  function reset() {
+//    shitInput.value = ""
+//  }
 
 
   // for (let i = 0; i < randomWord.length; i++) {
