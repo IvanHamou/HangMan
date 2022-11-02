@@ -27,6 +27,9 @@
 // array med ord att gissa på
 const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
 const ul = document.querySelector('ul');
+const ShowParts = document.querySelector("figure")
+
+
 
 //vårat ord slumpas till en variabel
 let pickAnumber = Math.floor(Math.random() * wordList.length);
@@ -69,7 +72,14 @@ document.querySelector('#inputMain').addEventListener('keydown', (event) => {
       wrongGuesses.push(userInput);
       document.querySelector('p').textContent = `${wrongGuesses}`;
       console.log(wrongGuesses);
+      ShowParts.classList.add("scaffold")
+      ShowParts.classList.add("legs")
+      ShowParts.classList.add("arms")
+      ShowParts.classList.add("body")
+      ShowParts.classList.add("head")
     }
+
+    
   });
 
 
