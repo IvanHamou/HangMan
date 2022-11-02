@@ -39,13 +39,10 @@ let rightLetter = [];
 console.log(randomWord);
 
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
-const lines = letters.map(x => ('-'));
-lines.innerHTML = `-`;
-console.log(lines);
-letters.join();
-// console.log(mapLetters);
+const lines = letters.map(x => `${x} `);
 
-document.querySelector('#inputMain').addEventListener('keydown', (event) => {
+
+const inputField = document.querySelector('#inputMain').addEventListener('keydown', (event) => {
   const userInput = event.key;
   let correctGuess = false;
   console.log(event.key);
@@ -64,13 +61,18 @@ document.querySelector('#inputMain').addEventListener('keydown', (event) => {
       ul.insertAdjacentHTML ('beforeend', rightLetter);
     }
   }
-    if (correctGuess === false){
-      console.log('Fel gissning');
-      wrongGuesses.push(userInput);
-      document.querySelector('p').textContent = `${wrongGuesses}`;
-      console.log(wrongGuesses);
-    }
+  if (correctGuess === false){
+    console.log('Fel gissning');
+    wrongGuesses.push(userInput);
+
+    document.querySelector('p').textContent = `${wrongGuesses}`;
+    console.log(wrongGuesses);
+    
+  }
+
   });
+  
+ 
 
 
   // for (let i = 0; i < randomWord.length; i++) {
