@@ -44,11 +44,8 @@ let rightLetter = [];
 console.log(randomWord);
 
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
-const lines = letters.map(x => ('-'));
-lines.innerHTML = `-`;
-console.log(lines);
-letters.join();
-// console.log(mapLetters);
+const lines = letters.map(x => `${x} `);
+
 
 
 
