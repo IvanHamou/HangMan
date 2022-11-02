@@ -61,15 +61,12 @@ const inputField = document.querySelector('#inputMain').addEventListener('keydow
       ul.insertAdjacentHTML ('beforeend', rightLetter);
     }
   }
-  if (correctGuess === false){
-    console.log('Fel gissning');
-    wrongGuesses.push(userInput);
-
-    document.querySelector('p').textContent = `${wrongGuesses}`;
-    console.log(wrongGuesses);
-    
-  }
-
+    if (correctGuess === false){
+      console.log('Fel gissning');
+      wrongGuesses.push(userInput);
+      document.querySelector('p').textContent = `${wrongGuesses}`;
+      console.log(wrongGuesses);
+    }
   });
   
  
