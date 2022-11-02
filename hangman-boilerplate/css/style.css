@@ -20,14 +20,49 @@ figure.arms svg #arms {
 figure.legs svg #legs {
   opacity: 1;
 }
-.boxes {
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-bottom: 2px solid black;
-  margin:0;
-  padding: 0;
+
+body {
+  background-color: rgb(199, 161, 161);
+  font-family: 'Poppins', sans-serif;
 }
-.guess {
+
+section {
+  background-color: rgb(232, 232, 232);
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+ul {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  width: 150px;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+  font-size: 20px;
+}
+h1, p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  
+}
+p {
+  font-size: 25px;
+}
+figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#inputMain {
   margin: 20px;
+  font-family: 'Poppins', sans-serif;
 }

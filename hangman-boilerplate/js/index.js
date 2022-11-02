@@ -24,8 +24,11 @@
 
 // 
 
+// array med ord att gissa på
 const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
+const ul = document.querySelector('ul');
 
+//vårat ord slumpas till en variabel
 let pickAnumber = Math.floor(Math.random() * wordList.length);
 const randomWord = wordList[pickAnumber];
 
@@ -36,7 +39,11 @@ let rightLetter = [];
 console.log(randomWord);
 
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
-console.log(letters);
+const lines = letters.map(x => ('-'));
+lines.innerHTML = `-`;
+console.log(lines);
+letters.join();
+// console.log(mapLetters);
 
 document.querySelector('#inputMain').addEventListener('keydown', (event) => {
   const userInput = event.key;
@@ -45,18 +52,22 @@ document.querySelector('#inputMain').addEventListener('keydown', (event) => {
   
   for(let i = 0; i<letters.length; i++) {
     if (userInput === letters[i]){
-      rightLetter.push(userInput);
-      console.log(rightLetter);
-      console.log('Rätt bokstav');
+      rightLetter[i] = letters[i];
       correctGuess = true;
 
-      const ul = document.querySelector('ul')
-      ul.innerHTML = rightLetter;
-    } 
+      console.log(rightLetter);
+      console.log('Rätt bokstav');
+      
+      
+      ul.textContent = '';
+      rightLetter[i]  = `<li>${letters[i]}</li>`;
+      ul.insertAdjacentHTML ('beforeend', rightLetter);
+    }
   }
     if (correctGuess === false){
       console.log('Fel gissning');
       wrongGuesses.push(userInput);
+      document.querySelector('p').textContent = `${wrongGuesses}`;
       console.log(wrongGuesses);
     }
   });

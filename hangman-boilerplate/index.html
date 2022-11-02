@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;1,100;1,200&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hangman boilerplate</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <form>
-      <div class="input-parent" id="input-parent">
-        <label>Give a word</label>
-      </div>
-    </form>
     <figure>
       <svg
         width="501"
@@ -65,11 +66,14 @@
     </figure>
     <section>
       <article>
-        <ul></ul>
+        <ul>
+          <li></li>
+        </ul>
       </article>
       <input id="inputMain" type="text" />
     </section>
-    <p>Fel bokstav</p>
+    <h1>Dessa bokstäver är inte med i ordet :</h1>
+    <p></p>
     <script src="js/index.js"></script>
   </body>
 </html>
