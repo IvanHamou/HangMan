@@ -28,10 +28,28 @@
 const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
 const ul = document.querySelector('ul');
 const ShowParts = document.querySelector("figure")
-var resetbtn = document.querySelector("#reset")
+let resetbtn = document.querySelector("#reset")
+let maxGuesses = 5;
+let showMaxGuesses = document.querySelector('aside')
+showMaxGuesses.textContent =  `You have ${maxGuesses} guesses left`;
+const slider = document.querySelector(".slider");
+const slider1 = document.querySelector(".slider");
+//const acceptedKeys = 'abcdefghijklmnopqrstuvwxyzåäö';
+const playAgainBtn = document.querySelector(".play-again-btn");
+const LoseText = document.querySelector(".lose-text");
+const WinText = document.querySelector(".win-text");
 
+// funktion som gör att det kommer upp en "game over-skärm"
+function toggleSliderLose() {
+  slider.classList.toggle("show");
+}
+playAgainBtn.addEventListener("click", () => {
+  toggleSliderLose();
+});
 
-
+function toggleSliderWin() {
+  slider1.classList.toggle("show");
+}
 
 //vårat ord slumpas till en variabel
 let pickAnumber = Math.floor(Math.random() * wordList.length);
@@ -44,42 +62,70 @@ let rightLetter = [];
 console.log(randomWord);
 
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
-const lines = letters.map(x => `${x} `);
+// letters.map(x => ('_'));
 
 
-
-
-const inputshit = document.querySelector('#inputMain').addEventListener('keydown', (event) => {
+document.querySelector('#input').addEventListener('keypress', (event) => {
   const userInput = event.key;
   let correctGuess = false;
   console.log(event.key);
   
   for(let i = 0; i<letters.length; i++) {
     if (userInput === letters[i]){
-      rightLetter[i] = letters[i];
-      correctGuess = true;
+    letters.join("");
+      console.log(letters.join(""));
+      rightLetter[i] = `${letters[i]}''`;
+      //pusha in med '' och mellanslag?
 
+      correctGuess = true;
+      
       console.log(rightLetter);
       console.log('Rätt bokstav');
       
-      
       ul.textContent = '';
-      rightLetter[i]  = `<li>${letters[i]}</li>`;
+      rightLetter[i]  = `<li>${letters[i]} </li>`;
       ul.insertAdjacentHTML ('beforeend', rightLetter);
     }
   }
-    if (correctGuess === false){
-      console.log('Fel gissning');
-      wrongGuesses.push(userInput);
-      document.querySelector('p').textContent = `${wrongGuesses}`;
-      console.log(wrongGuesses);
-      ShowParts.classList.add("scaffold")
-      //ShowParts.classList.add("legs")
-      //ShowParts.classList.add("arms")
-      //ShowParts.classList.add("body")
-      //ShowParts.classList.add("head")
+  if (correctGuess === false){
+    console.log('Fel gissning');
+    wrongGuesses.push(userInput);
+    document.querySelector('.wrong').textContent = `${wrongGuesses} ''`;
+    console.log(wrongGuesses);
+    
+    
+    if (wrongGuesses.length == 1){
+     ShowParts.classList.add("scaffold")
+     showMaxGuesses.textContent = `You have ${maxGuesses-1} guesses left`;
+
     }
-    console.log(shitInput.value);
+    else if (wrongGuesses.length == 2){
+      ShowParts.classList.add("head")
+      showMaxGuesses.textContent = `You have ${maxGuesses-2} guesses left`;
+
+    } 
+    else if (wrongGuesses.length == 3){
+      ShowParts.classList.add("body")
+      showMaxGuesses.textContent = `You have ${maxGuesses-3} guesses left`;
+
+    }
+    else if (wrongGuesses.length == 4){
+       ShowParts.classList.add("arms")
+       showMaxGuesses.textContent = `You have ${maxGuesses-4} guesses left`;
+
+    }
+    else if (wrongGuesses.length == 5){
+      ShowParts.classList.add("legs")
+      showMaxGuesses.textContent = `You have ${maxGuesses-5} guesses left`;
+      LoseText.textContent= `GAME OVER! Rätt ord var "${randomWord}"`;
+      LoseText.style.color ="white";
+      LoseText.style.backgroundColor="red";
+    toggleSliderLose();
+    } 
+    
+    // }); 
+    
+  }
   });
 
 

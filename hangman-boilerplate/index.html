@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <aside></aside>
     <figure>
       <svg
         width="501"
@@ -65,17 +66,23 @@
       </svg>
     </figure>
     <section>
+      <content class="slider">
+        <p class="lose-text"></p>
+        <button class="play-again-btn">PLAY AGAIN?</button>
+      </content>
+      <content class="slider1">
+        <p class="win-text"></p>
+        <button class="play-again-btn">PLAY AGAIN?</button>
+      </content>
       <article>
         <ul>
           <li></li>
         </ul>
       </article>
-      <input id="inputMain" type="text" />
-      <button id="reset">Play Again!</button>
-
+      <input id="input" type="text" maxlength="1" />
+      <h1>Fel gissningar :</h1>
+      <p class="wrong"></p>
     </section>
-    <h1>Dessa bokstäver är inte med i ordet :</h1>
-    <p></p>
     <script src="js/index.js"></script>
   </body>
 </html>
