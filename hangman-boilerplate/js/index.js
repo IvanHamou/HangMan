@@ -57,7 +57,7 @@ let pickAnumber = Math.floor(Math.random() * wordList.length);
 const randomWord = wordList[pickAnumber];
 
 const wrongGuesses = [];
-let rightLetter = [];
+let rightLetter = [`<li>-</li>`,`<li>-</li>`,`<li>-</li>`,`<li>-</li>`,`<li>-</li>`,];
 
 
 console.log(randomWord);
@@ -74,7 +74,7 @@ document.querySelector('body').addEventListener('keypress', (event) => {
   
   for(let i = 0; i<letters.length; i++) {
     if (userInput === letters[i]){
-      rightLetter[i] = `${letters[i]}''`;
+      rightLetter[i] = `${letters[i]}`;
       //pusha in med '' och mellanslag?
 
       correctGuess = true;
@@ -83,7 +83,7 @@ document.querySelector('body').addEventListener('keypress', (event) => {
       console.log('Rätt bokstav');
       
       ul.textContent = '';
-      rightLetter[i]  = `<li>${letters[i]} </li>`;
+      rightLetter[i]  = `<li>${letters[i]}</li>`;
       ul.insertAdjacentHTML ('beforeend', rightLetter.join(""));
     }
   }
