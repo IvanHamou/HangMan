@@ -1,28 +1,3 @@
-/**
- För att toggla SVG:en
- document.querySelector('figure').classList.add('scaffold')
- document.querySelector('figure').classList.add('head')
- document.querySelector('figure').classList.add('body')
- document.querySelector('figure').classList.add('arms')
- document.querySelector('figure').classList.add('legs')
-
- */
-// var input = "h";
-// const ord = "here";
-// let newO = ord.split(" ");
-// // console.log(newO);
-// // const ee = newO.join("");
-// // var ww = ee.split("");
-// let myIndex;
-// newO.forEach((res, i) => {
-//   if (res.includes(input)) {
-//     myIndex = i;
-//   } else {
-//     console.log("no", input);
-//   }
-// });
-
-// 
 
 // array med ord att gissa på
 const wordList = ['tomat', 'banan', 'päron', 'äpple', 'morot', 'mössa', 'gurka', 'dator', 'penna', 'jacka'];
@@ -63,7 +38,6 @@ let rightLetter = [`<li>-</li>`,`<li>-</li>`,`<li>-</li>`,`<li>-</li>`,`<li>-</l
 console.log(randomWord);
 
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
-// letters.map(x => ('_'));
 
 document.querySelector('body').addEventListener('keypress', (event) => {
 
@@ -121,28 +95,7 @@ document.querySelector('body').addEventListener('keypress', (event) => {
       LoseText.style.color ="white";
       LoseText.style.backgroundColor="red";
     toggleSliderLose();
-    } 
-    
-    // }); 
-    
+    }  
   }
   });
-
-
-//  resetbtn.addEventListener("click",function(){
-//    reset();
-//});
-//  function reset() {
-//    shitInput.value = ""
-//  }
-
-
-  // for (let i = 0; i < randomWord.length; i++) {
-  //   if (randomWord.match(userInput)) {
-  //   console.log("Rätt");
-  //   }else {
-  //   console.log("fel");
-  //   }
-  // };
-  // console.log(event);
 
