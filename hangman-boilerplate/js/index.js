@@ -39,6 +39,7 @@ const playAgainBtn = document.querySelector(".play-again-btn");
 const LoseText = document.querySelector(".lose-text");
 const WinText = document.querySelector(".win-text");
 
+
 // funktion som gör att det kommer upp en "game over-skärm"
 function toggleSliderLose() {
   slider.classList.toggle("show");
@@ -64,13 +65,12 @@ console.log(randomWord);
 const letters = randomWord.split('');// splittrar ordet till en array med bokstäver för att enklare kunna jämföra.
 // letters.map(x => ('_'));
 
+document.querySelector('body').addEventListener('keypress', (event) => {
 
-document.querySelector('#input').addEventListener('keypress', (event) => {
   const userInput = event.key;
   let correctGuess = false;
   console.log(event.key);
-  letters.join("");
-  console.log(letters.join(""));
+
   
   for(let i = 0; i<letters.length; i++) {
     if (userInput === letters[i]){
