@@ -69,11 +69,11 @@ document.querySelector('#input').addEventListener('keypress', (event) => {
   const userInput = event.key;
   let correctGuess = false;
   console.log(event.key);
+  letters.join("");
+  console.log(letters.join(""));
   
   for(let i = 0; i<letters.length; i++) {
     if (userInput === letters[i]){
-    letters.join("");
-      console.log(letters.join(""));
       rightLetter[i] = `${letters[i]}''`;
       //pusha in med '' och mellanslag?
 
@@ -84,13 +84,13 @@ document.querySelector('#input').addEventListener('keypress', (event) => {
       
       ul.textContent = '';
       rightLetter[i]  = `<li>${letters[i]} </li>`;
-      ul.insertAdjacentHTML ('beforeend', rightLetter);
+      ul.insertAdjacentHTML ('beforeend', rightLetter.join(""));
     }
   }
   if (correctGuess === false){
     console.log('Fel gissning');
     wrongGuesses.push(userInput);
-    document.querySelector('.wrong').textContent = `${wrongGuesses} ''`;
+    document.querySelector('.wrong').textContent = `${wrongGuesses.join("")}`;
     console.log(wrongGuesses);
     
     
