@@ -1,7 +1,6 @@
 figure svg > * {
   opacity: 0;
 }
-
 figure svg #ground {
   opacity: 1;
 }
@@ -20,93 +19,92 @@ figure.arms svg #arms {
 figure.legs svg #legs {
   opacity: 1;
 }
-
 body {
-  background-color: rgb(255, 255, 255);
-  font-family: 'Poppins', sans-serif;
-  height: auto;
+  font-family: 'Silkscreen', cursive;
 }
-
-section {
-  background-color: rgb(232, 232, 232);
-  width: 100vw;
+header {
+  background-color: white;
+  height: 145px;
+  display: flex;
+  font-size: 35px;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+header h1 {
+  color:black;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+div {
+  flex-direction: column;
+  width: 300px;
   height: 200px;
+  font-size: 30px;
+  text-align: center;
+  color: black;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+}
+section {
+  background: rgb(38,38,38);
+  background: linear-gradient(0deg, rgba(38,38,38,1) 0%, rgba(255,255,255,1) 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-article {
- background-color: rgb(255, 255, 255);
- /* border: 2px solid black; */
-
 }
 ul {
   font-size: 30px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 240px;
-  text-decoration: none;
+  color: white;
 }
 li {
-
   width: 40px;
   list-style: none;
-  font-size: 30px;
 }
 h1, p{
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0;
-  color: black;
-  
+  color: rgb(255, 255, 255);
 }
-p {
+.wrong {
   font-size: 25px;
-  color:black;
+  color:rgb(255, 255, 255); 
 }
 aside {
-  display: flex;
-  font-size: 2rem;
+  font-size: 25px;
+  text-align: center;
+  padding: 1.5rem; 
 }
 figure {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 600px;
+  padding-bottom: 2rem;
 }
-#input {
-  display: flex;
-  align-items: center;
-  margin: 20px;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  border: 2px solid black;
-  padding: 1rem;
-  width: 200px;
-  text-align: center;
-}
-button {
-  display: flex;
-  font-family: 'Poppins', sans-serif;
+  button.play-again-btn, button.play-again-btn2  {
+  font-family: 'Silkscreen', cursive;
   font-size: 20px;
-  border-radius: 20px;
-  color: white;
-  background-color: black;
+  padding:1rem 2rem;
+  border-radius: 100px;
+  background-color: rgb(235, 235, 235);
   cursor: pointer;
+  line-height: 12px; 
 }
-button:hover {
-  background-color: rgba(0, 0, 0, 0.806);
+button:hover.play-again-btn2, 
+button:hover.play-again-btn{
+  background-color: white;
 }
-/* ━━━━━━━━━━| SLIDER |━━━━━━━━━━ */
+/* ━━━━━━━━━━| SLIDER GAME OVER|━━━━━━━━━━ */
 .slider {
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background: rgb(197,23,23);
+  background: radial-gradient(circle, rgba(197,23,23,1) 0%, rgba(255,255,255,1) 94%);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -114,29 +112,29 @@ button:hover {
   align-items: center;
   transform: translateX(100%);
   transition: all 0.3s ease;
-  border: 2px solid black;
   z-index: 1;
 }
-
 .slider.show {
   transform: translateX(0);
   background-color: rgba(0, 0, 0, 0.96);
 }
-
 .slider p {
   font-size: 40px;
   min-width: 20rem;
   padding: 3rem;
   border-radius: 10px;
+  font-family: 'Silkscreen', cursive;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-/* ━━━━━━━━━━| SLIDER |━━━━━━━━━━ */
+/* ━━━━━━━━━━| SLIDER WIN |━━━━━━━━━━ */
 .slider1 {
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background: rgb(0,196,14);
+  background: radial-gradient(circle, rgba(0,196,14,1) 0%, rgba(255,255,255,1) 94%);
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -144,19 +142,19 @@ button:hover {
   align-items: center;
   transform: translateX(100%);
   transition: all 0.3s ease;
-  border: 2px solid black;
   z-index: 1;
 }
-
 .slider1.show {
   transform: translateX(0);
   background-color: rgba(0, 0, 0, 0.96);
 }
-
 .slider1 p {
+  font-family: 'Silkscreen', cursive;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   font-size: 40px;
   min-width: 20rem;
   background-color: #59a25a;
   padding: 3rem;
   border-radius: 10px;
+  justify-content: center;
 }
